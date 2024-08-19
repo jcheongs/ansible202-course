@@ -1,0 +1,21 @@
+- name: making birdhouse files
+  hosts: bender, fry, zoidberg
+  connection: ssh
+
+  tasks: 
+  # ORDER MATTERS
+    - name: cut wood
+      saw: # MODULE
+           # PARAMETERS for how the modules work!
+           wood: pine
+           length: [15, 15, 10, 10, 8, 8]
+
+    - name: nail wood together
+      hammer:
+        shape: birdhouse shape
+        nails: 16 penny
+
+    - name: paint the birdhouse
+      brush:
+        color: red
+        paint: latex
